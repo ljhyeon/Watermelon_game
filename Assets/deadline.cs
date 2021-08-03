@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class deadline : MonoBehaviour
 {
-    public GameObject predeadline;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +14,5 @@ public class deadline : MonoBehaviour
     void Update()
     {
         
-    }
+    }    
 }
