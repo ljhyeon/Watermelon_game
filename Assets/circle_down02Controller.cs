@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class circle_down02Controller : MonoBehaviour
 {
+    ScoreDirector scoreDirector;
+
     Rigidbody2D myRigid;
     bool execute;
     public GameObject circle;
@@ -16,6 +18,8 @@ public class circle_down02Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreDirector = GameObject.Find("ScoreDirector").GetComponent<ScoreDirector>();
+
         this.myRigid = GetComponent<Rigidbody2D>();
         this.execute = false;
         this.circle02 = GameObject.FindGameObjectsWithTag("circle02");
@@ -48,8 +52,6 @@ public class circle_down02Controller : MonoBehaviour
                 circle.transform.position = p1;
                 Instantiate(circle);
                 execute = true;
-
-               //Invoke("ChangeTag", 2f);
             }
 
         }
@@ -74,7 +76,9 @@ public class circle_down02Controller : MonoBehaviour
                 Destroy(circle02[i]);
                 circle03.transform.position = p1;
                 Instantiate(circle03);
-                
+
+                scoreDirector.total_score += 2;
+
                 delete = true;
                 break;
             }
@@ -86,10 +90,5 @@ public class circle_down02Controller : MonoBehaviour
             this.circle02 = GameObject.FindGameObjectsWithTag("circle02");
         }
         
-    }
-
-    void ChangeTag()
-    {
-       gameObject.tag = "circle02";
     }
 }

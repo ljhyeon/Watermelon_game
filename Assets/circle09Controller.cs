@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class circle09Controller : MonoBehaviour
 {
+    ScoreDirector scoreDirector;
+
     Rigidbody2D myRigid;
     bool execute;
     public GameObject[] circle09;
@@ -15,6 +17,8 @@ public class circle09Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreDirector = GameObject.Find("ScoreDirector").GetComponent<ScoreDirector>();
+
         this.myRigid = GetComponent<Rigidbody2D>();
         this.execute = false;
         this.circle09 = GameObject.FindGameObjectsWithTag("circle09");
@@ -54,7 +58,9 @@ public class circle09Controller : MonoBehaviour
                 Destroy(circle09[i]);
                 circle10.transform.position = p1;
                 Instantiate(circle10);
-                
+
+                scoreDirector.total_score += 256;
+
                 delete = true;
                 break;
             }
