@@ -7,10 +7,13 @@ public class predeadline : MonoBehaviour
     public GameObject deadline;
 
     int time = 0;
+    int count;
 
     void Start()
     {
         deadline.SetActive(false);
+        this.time = 0;
+        this.count = 0;
     }
 
     // Update is called once per frame
@@ -22,8 +25,13 @@ public class predeadline : MonoBehaviour
         }
         else
         {
-            deadline.SetActive(false);
+            if(count == 0) deadline.SetActive(false);
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        this.count += 1;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -33,6 +41,7 @@ public class predeadline : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+        this.count -= 1;
         this.time = 0;
     }
 
