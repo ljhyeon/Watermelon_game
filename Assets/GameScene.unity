@@ -494,6 +494,7 @@ MonoBehaviour:
   - {fileID: 8657850639835761346, guid: d3a857c66c261dc46a4e49fab6078e0d, type: 3}
   - {fileID: 9210689766536767700, guid: 8050f7e7211f3494bb3426190a7e3bf7, type: 3}
   - {fileID: 3420153505718585920, guid: 7789bf16972f00b468300dd910bbdc83, type: 3}
+  check: 0
 --- !u!4 &1282117600
 Transform:
   m_ObjectHideFlags: 0
@@ -1041,6 +1042,7 @@ GameObject:
   - component: {fileID: 1987891716}
   - component: {fileID: 1987891715}
   - component: {fileID: 1987891717}
+  - component: {fileID: 1987891718}
   m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
@@ -1139,3 +1141,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.59, y: 0.21}
   m_EdgeRadius: 0
+--- !u!50 &1987891718
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987891714}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

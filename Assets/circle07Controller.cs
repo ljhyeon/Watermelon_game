@@ -6,6 +6,8 @@ public class circle07Controller : MonoBehaviour
 {
     ScoreDirector scoreDirector;
 
+    CircleGenerator circleGenerator;
+
     Rigidbody2D myRigid;
     bool execute;
     public GameObject[] circle07;
@@ -19,6 +21,7 @@ public class circle07Controller : MonoBehaviour
     void Start()
     {
         scoreDirector = GameObject.Find("ScoreDirector").GetComponent<ScoreDirector>();
+        circleGenerator = GameObject.Find("CircleGenerator").GetComponent<CircleGenerator>();
 
         this.myRigid = GetComponent<Rigidbody2D>();
         this.execute = false;
@@ -71,5 +74,10 @@ public class circle07Controller : MonoBehaviour
             this.circle07 = GameObject.FindGameObjectsWithTag("circle07");
         }
         
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        circleGenerator.check = 0;
     }
 }

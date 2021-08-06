@@ -21,7 +21,7 @@ public class deadline : MonoBehaviour
         print(count);
         if(count >= 1)
         {
-            Invoke("ChangeScene", 5f);
+            Invoke("ChangeScene", 2f);
         }
     }    
 

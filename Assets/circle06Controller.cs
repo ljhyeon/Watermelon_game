@@ -5,6 +5,7 @@ using UnityEngine;
 public class circle06Controller : MonoBehaviour
 {
     ScoreDirector scoreDirector;
+    CircleGenerator circleGenerator;
 
     Rigidbody2D myRigid;
     bool execute;
@@ -18,6 +19,7 @@ public class circle06Controller : MonoBehaviour
     void Start()
     {
         scoreDirector = GameObject.Find("ScoreDirector").GetComponent<ScoreDirector>();
+        circleGenerator = GameObject.Find("CircleGenerator").GetComponent<CircleGenerator>();
 
         this.myRigid = GetComponent<Rigidbody2D>();
         this.execute = false;
@@ -69,5 +71,10 @@ public class circle06Controller : MonoBehaviour
             this.circle06 = GameObject.FindGameObjectsWithTag("circle06");
         }
         
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        circleGenerator.check = 0;
     }
 }
