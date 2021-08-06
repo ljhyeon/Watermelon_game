@@ -6,19 +6,29 @@ public class CircleGenerator : MonoBehaviour
 {
     public GameObject[] circlePrefab;
 
+    public int check;
+
     void Start()
     {
         GameObject circle = Instantiate(circlePrefab[0]) as GameObject;
         circle.transform.position = new Vector3(-0.01f, 4.53f, 0);
+
+        this.check = 0;
+
     }
 
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(this.check == 0)
         {
-            Invoke("CreateCircle", 2f);
+            if (Input.GetMouseButtonDown(0))
+            {
+                this.check = 1;
+                Invoke("CreateCircle", 2f);
+            }
         }
+        print(check);
     }
 
     void CreateCircle()

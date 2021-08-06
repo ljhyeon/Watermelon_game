@@ -14,6 +14,7 @@ TagManager:
   - circle08
   - circle09
   - circle10
+  - score02
   layers:
   - Default
   - TransparentFX
